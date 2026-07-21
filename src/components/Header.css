@@ -10,14 +10,15 @@
 .main_h.scrolled {
   background: rgba(31, 53, 37, 0.6);
   backdrop-filter: blur(10px);
+  height: 80px;
 }
 
 /* ROW */
 .row {
   width: 90%;
   max-width: 1200px;
-  margin: auto;
   display: flex;
+  margin: auto;
   justify-content: space-between;
   align-items: center;
 }

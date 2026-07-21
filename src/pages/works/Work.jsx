@@ -1,24 +1,23 @@
 import "./Work.css";
 import Button from "../../components/button/Button";
 
-import img1 from "../../assets/shoppingcart.png";
-import img2 from "../../assets/ringoffice.png";
+import img4 from "../../assets/shoppingcart.png";
 import img3 from "../../assets/photogallery.png";
-import img4 from "../../assets/Servicesimage.jpg";
-import img5 from "../../assets/Servicesimage.jpg";
-import img6 from "../../assets/Servicesimage.jpg";
+import img1 from "../../assets/shopo-web.png";
+import img2 from "../../assets/auth-app.png";
+
 
 function Work() {
   const projects = [
     {
       image: img1,
-      title: "Shopping Cart",
-      link: "https://shopping-cart-sawera.netlify.app/", // 🔥 replace later
+      title: "Shopo Website",
+      link: " https://shopo-web.netlify.app/", // 🔥 replace later
     },
     {
       image: img2,
-      title: "Ring Office",
-      link: "https://69d5355dbd4c1a111ed302dd--ring-office.netlify.app/",
+      title: "Authentication",
+      link: "https://sawera-auth-app.netlify.app/",
     },
     {
       image: img3,
@@ -27,18 +26,8 @@ function Work() {
     },
     {
       image: img4,
-      title: "Project 4",
-      link: "#",
-    },
-    {
-      image: img5,
-      title: "Project 5",
-      link: "#",
-    },
-    {
-      image: img6,
-      title: "Project 6",
-      link: "#",
+      title: "Shopping Cart",
+      link: "https://shopping-cart-sawera.netlify.app/",
     },
   ];
 
