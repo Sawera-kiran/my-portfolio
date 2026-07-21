@@ -1,0 +1,87 @@
+
+
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  padding: 80px 8%;
+  gap: 40px;
+}
+
+/* ===== TEXT CONTENT ===== */
+.about-content {
+  width: 50%;
+  max-width: 600px;
+}
+
+/* ===== HEADING ===== */
+.about-heding {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-weight: 900;
+}
+
+/* ===== PARAGRAPH ===== */
+.about-para {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* ===== BUTTON ===== */
+.aboutButton {
+  margin-top: 20px;
+}
+
+/* ===== IMAGE ===== */
+.about-img {
+  width: 50%;
+}
+
+.aboutimage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .about-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-heding {
+    font-size: 28px;
+  }
+
+  .about-para {
+    font-size: 14px;
+  }
+
+  .about-img {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .aboutButton {
+    margin-top: 20px;
+  }
+}

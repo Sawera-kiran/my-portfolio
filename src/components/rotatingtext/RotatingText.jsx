@@ -1,0 +1,68 @@
+// import { motion, AnimatePresence } from "framer-motion";
+// import { useEffect, useState } from "react";
+
+// const RotatingText = ({ texts = [], interval = 2000 }) => {
+//   const [index, setIndex] = useState(0);
+
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setIndex((prev) => (prev + 1) % texts.length);
+//     }, interval);
+
+//     return () => clearInterval(timer);
+//   }, [texts.length, interval]);
+
+//   return (
+//     <div style={{ display: "inline-block", overflow:"hidden", height: "1.3em" , paddingTop:"40px", fontSize:"5.5rem", fontWeight:"bold", color:"#ffffff" }}>
+//       <AnimatePresence mode="wait">
+//         <motion.span
+//           key={texts[index]}
+//           initial={{ y: "100%", opacity: 0 }}
+//           animate={{ y: "0%", opacity: 1 }}
+//           exit={{ y: "-100%", opacity: 0 }}
+//           transition={{ duration: 0.5 }}
+//           style={{ display: "inline-block" }}
+//         >
+//           {texts[index]}
+//         </motion.span>
+//       </AnimatePresence>
+//     </div>
+//   );
+// };
+
+// export default RotatingText;
+
+
+
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const RotatingText = ({ texts = [], interval = 1500 }) => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % texts.length);
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, [texts.length, interval]);
+
+  return (
+    <div className="rotating-text">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={texts[index]}
+          initial={{ y: "100%", opacity: 0 }}
+          animate={{ y: "0%", opacity: 1 }}
+          exit={{ y: "-100%", opacity: 0 }}
+          transition={{ duration: 0.1 }}
+        >
+          {texts[index]}
+        </motion.span>
+      </AnimatePresence>
+    </div>
+  );
+};
+
+export default RotatingText;

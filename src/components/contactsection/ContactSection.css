@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ContactSection {
+
+  background-color: black;
+  color: rgb(255, 255, 255);
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-top: solid 1px var(--primary-color);
+}
+
+.ContactSection-heading {
+  font-size: 30px;
+  margin-top: 80px;
+  text-transform: uppercase;
+  line-height: 36px;
+  width: fit-content;
+  width: 700px;
+  line-height: 44px;
+}
+
+.ContactSection-btn {
+  margin-top: 20px;
+}

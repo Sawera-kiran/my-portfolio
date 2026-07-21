@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+}
+
+/* ===== CONTAINER ===== */
+.Container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== BACKGROUND IMAGE ===== */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== CONTENT ===== */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+}
+
+/* ===== ROTATING TEXT ===== */
+.rotating-text {
+  display: inline-block;
+  overflow: hidden;
+  height: 1.2em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* ===== TITLE (CONTROL SIZE HERE) ===== */
+.hero-title {
+  font-size: clamp(28px, 8vw, 80px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-top: 10px;
+}
+
+/* ===== PARAGRAPH ===== */
+.hero-content p {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+/* ===== SOCIAL LINKS ===== */
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.social-links li a {
+  color: #cecccc;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.social-links li a:hover {
+  color: white;
+  transform: scale(1.3);
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 20px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .social-links {
+    margin-top: 40px;
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  .hero-title {
+    line-height: 1.2;
+  }
+}

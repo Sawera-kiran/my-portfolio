@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== MAIN ===== */
+.Services {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 80px 8%;
+  background: url("../../assets/servicesimage.jpg") center/cover no-repeat;
+}
+
+/* ===== LEFT CONTENT ===== */
+.Services-content {
+  width: 30%;
+  text-align: left;
+}
+
+/* REMOVE THIS BUG */
+.Services-content {
+  margin-top: 0;
+}
+
+/* ===== HEADING ===== */
+.Services-heading {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: rgb(41, 70, 38);
+  text-transform: uppercase;
+}
+
+/* ===== PARA ===== */
+.Services-para {
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ===== GRID ===== */
+.Services-container {
+  width: 65%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* ===== ITEMS ===== */
+.Services-items {
+  background-color: rgba(29, 57, 30, 0);
+  backdrop-filter: blur(8px);
+  padding: 15px;
+}
+
+/* ===== ICON ===== */
+.Services-icon {
+  font-size: 30px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* ===== ITEM HEADING ===== */
+.Services-items-heding {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: rgb(41, 70, 38);
+  text-transform: uppercase;
+}
+
+/* ===== ITEM PARA ===== */
+.Services-items-para {
+  font-size: 15px;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+  .Services {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .Services-content {
+    width: 100%;
+  }
+
+  .Services-container {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .Services {
+    padding: 60px 20px;
+  }
+
+  .Services-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .Services-heading {
+    font-size: 26px;
+  }
+
+  .Services-para {
+    font-size: 14px;
+  }
+
+  .Services-container {
+    grid-template-columns: 1fr;
+  }
+}
