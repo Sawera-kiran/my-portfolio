@@ -20,7 +20,7 @@
 /* LEFT CONTENT */
 .work-content {
 
-  width: 40%;
+  width: 30%;
   color: white;
   display: flex;
   align-items: center;
@@ -48,7 +48,7 @@
 
 /* GRID */
 .work-grid {
-  width: 70%;
+  width: 80%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 20px;
