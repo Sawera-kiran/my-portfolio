@@ -1,96 +1,96 @@
 import "./Services.css";
-import { FiCode } from "react-icons/fi";
-import { FiSmartphone } from "react-icons/fi";
-import { FiEye } from "react-icons/fi";
-import { FiPlayCircle } from "react-icons/fi";
-import { FiZap } from "react-icons/fi";
-import { FiLayers } from "react-icons/fi";
+
+import {
+  FiCode,
+  FiSmartphone,
+  FiEye,
+  FiPlayCircle,
+  FiZap,
+  FiLayers,
+  FiArrowUpRight,
+} from "react-icons/fi";
+
+const services = [
+  {
+    icon: <FiCode />,
+    title: "Frontend Development",
+    description:
+      "Building modern, scalable and maintainable React applications with reusable components and optimized performance.",
+  },
+  {
+    icon: <FiSmartphone />,
+    title: "Responsive Web Design",
+    description:
+      "Creating fully responsive layouts that deliver a seamless experience across desktop, tablet and mobile devices.",
+  },
+  {
+    icon: <FiEye />,
+    title: "UI / UX Design",
+    description:
+      "Designing visually appealing user interfaces with a strong focus on usability, typography and modern aesthetics.",
+  },
+  {
+    icon: <FiPlayCircle />,
+    title: "Animations & Interactions",
+    description:
+      "Creating smooth animations and micro-interactions that make interfaces feel engaging and professional.",
+  },
+  {
+    icon: <FiZap />,
+    title: "Performance Optimization",
+    description:
+      "Optimizing websites for faster loading, better Core Web Vitals and excellent user experience.",
+  },
+  {
+    icon: <FiLayers />,
+    title: "Clean Code",
+    description:
+      "Writing clean, reusable and scalable code following modern frontend development best practices.",
+  },
+];
+
 function Services() {
   return (
-    <>
-      <div id="services" className="Services">
-          <div className="Services-content">
-            <h1 className="Services-heading">Services</h1>
-            <p className="Services-para">
-              I specialize in crafting modern, responsive front-end experiences
-              that combine performance with visual elegance.
-            </p>
-          </div>
+    <section className="services-section" id="services">
+      <div className="services-bg one"></div>
+      <div className="services-bg two"></div>
 
-          <div className="Services-container">
-            <div className="Services-items">
-              <div className="Services-icon">
-                <FiCode />
+      <div className="services-wrapper">
+        <div className="services-header">
+          <span className="services-tag">WHAT I OFFER</span>
+
+          <h2>
+            Services That Bring <span>Ideas To Life</span>
+          </h2>
+
+          <p>
+            I build responsive, modern and high-performance web applications
+            focused on exceptional user experience, clean architecture and
+            maintainable code.
+          </p>
+        </div>
+
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <div className="service-card" key={index}>
+              <div className="service-card-glow"></div>
+
+              <div className="service-icon">{service.icon}</div>
+
+              <div className="service-content">
+                <h3>{service.title}</h3>
+
+                <p>{service.description}</p>
               </div>
-              <h2 className="Services-items-heding">Frontend Development</h2>
-              <p className="Services-items-para">
-                Building fast, scalable, and maintainable front-end applications
-                using modern technologies like React, ensuring clean structure
-                and performance optimization.
-              </p>
-            </div>
-            <div className="Services-items">
-              <div className="Services-icon">
-                <FiSmartphone />
+
+              <div className="service-arrow">
+                <FiArrowUpRight />
               </div>
-              <h2 className="Services-items-heding">Responsive Web Design</h2>
-              <p className="Services-items-para">
-                Creating fully responsive layouts that adapt seamlessly across
-                all devices, providing a consistent and user friendly
-                experience.
-              </p>
             </div>
-            <div className="Services-items">
-              <div className="Services-icon">
-                <FiEye />
-              </div>
-              <h2 className="Services-items-heding">UI Aesthetic Design</h2>
-              <p className="Services-items-para">
-                Designing visually appealing interfaces with a strong focus on
-                color harmony, spacing, and typography inspired by real-world
-                visual aesthetics.
-              </p>
-            </div>
-            <div className="Services-items">
-              <div className="Services-icon">
-                <FiPlayCircle />
-              </div>
-              <h2 className="Services-items-heding">
-                Animations & Interactions
-              </h2>
-              <p className="Services-items-para">
-                Enhancing user experience with smooth animations and
-                micro-interactions that make interfaces feel dynamic and
-                engaging.
-              </p>
-            </div>
-            <div className="Services-items">
-              <div className="Services-icon">
-                <FiZap />
-              </div>
-              <h2 className="Services-items-heding">
-                Performance Optimization
-              </h2>
-              <p className="Services-items-para">
-                Optimizing websites for speed and efficiency, ensuring fast load
-                times and smooth performance across all platforms.
-              </p>
-            </div>
-            <div className="Services-items">
-              <div className="Services-icon">
-                <FiLayers />
-              </div>
-              <h2 className="Services-items-heding">
-                Clean Code & Maintainability
-              </h2>
-              <p className="Services-items-para">
-                Writing clean, reusable, and scalable code that ensures
-                long-term maintainability and easy project expansion.
-              </p>
-            </div>
-          </div>
+          ))}{" "}
+        </div>
       </div>
-    </>
+    </section>
   );
 }
 

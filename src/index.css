@@ -33,6 +33,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --primary-color: #1c281c;
+    --secondary-color:#3b5834;
     --font-color: #cecccc;
     --text: #9ca3af;
     --text-h: #f3f4f6;
