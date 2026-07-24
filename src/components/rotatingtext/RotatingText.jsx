@@ -17,10 +17,25 @@ const RotatingText = ({ texts = [], interval = 1500 }) => {
       <AnimatePresence mode="wait">
         <motion.span
           key={texts[index]}
-          initial={{ y: "100%", opacity: 0 }}
-          animate={{ y: "0%", opacity: 1 }}
-          exit={{ y: "-100%", opacity: 0 }}
-          transition={{ duration: 0.1 }}
+          initial={{
+            y: 70,
+            opacity: 0,
+            filter: "blur(8px)",
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+          }}
+          exit={{
+            y: -70,
+            opacity: 0,
+            filter: "blur(8px)",
+          }}
+          transition={{
+            duration: 0.55,
+            ease: [0.22, 1, 0.36, 1],
+          }}
         >
           {texts[index]}
         </motion.span>

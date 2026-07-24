@@ -15,7 +15,7 @@ const services = [
     icon: <FiCode />,
     title: "Frontend Development",
     description:
-      "Building modern, scalable and maintainable React applications with reusable components and optimized performance.",
+      "Building modern and maintainable React applications with reusable components and optimized performance.",
   },
   {
     icon: <FiSmartphone />,

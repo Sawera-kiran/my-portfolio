@@ -1,69 +1,100 @@
 import { useEffect, useState } from "react";
 import "./Header.css";
 
+const navLinks = [
+  { id: "home", label: "Home" },
+  { id: "services", label: "Services" },
+  { id: "about", label: "About" },
+  { id: "works", label: "Works" },
+  { id: "contact", label: "Contact" },
+];
+
 function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-
     const handleScroll = () => {
-      // Navbar background effect
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 30);
 
-      // 👇 Close menu on scroll (only when scrolling down)
-      if (window.scrollY > lastScrollY) {
-        setMenuOpen(false);
-      }
+      const scrollPosition = window.scrollY + 180;
 
-      lastScrollY = window.scrollY;
+      navLinks.forEach((link) => {
+        const section = document.getElementById(link.id);
+
+        if (!section) return;
+
+        if (
+          scrollPosition >= section.offsetTop &&
+          scrollPosition < section.offsetTop + section.offsetHeight
+        ) {
+          setActiveSection(link.id);
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
 
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
   return (
-    <header className={`main_h ${scrolled ? "scrolled" : ""}`}>
-      <div className="row">
-        <span className="logo">Sawera Kiran</span>
+    <header className={`header ${scrolled ? "scrolled" : ""}`}>
+      <div className="header-container">
+        <a href="#home" className="logo">
+          Sawera <span>Kiran</span>
+        </a>
 
-        {/* DESKTOP NAV */}
         <nav className="desktop-nav">
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#works">Works</a></li>
-            <li><a href="#contact">Contact</a></li>
+            {navLinks.map((link) => (
+              <li key={link.id}>
+                <a
+                  href={`#${link.id}`}
+                  className={activeSection === link.id ? "active" : ""}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
 
-        {/* HAMBURGER */}
-        <div
+        <button
+          type="button"
           className={`hamburger ${menuOpen ? "active" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => {
+            console.log("Clicked");
+            setMenuOpen((prev) => !prev);
+          }}
         >
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </div>
 
-      {/* MOBILE MENU */}
-      {menuOpen && (
-        <div className="mobile-menu">
-          <ul>
-            <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
-            <li><a href="#services" onClick={() => setMenuOpen(false)}>Services</a></li>
-            <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
-            <li><a href="#works" onClick={() => setMenuOpen(false)}>Works</a></li>
-            <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
-          </ul>
-        </div>
-      )}
+      <div className={`mobile-menu ${menuOpen ? "show" : ""}`}>
+        <ul>
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                className={activeSection === link.id ? "active" : ""}
+                onClick={handleLinkClick}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 }

@@ -1,80 +1,101 @@
 import "./Home.css";
 import heroimg from "../../assets/heroimg.jpg";
 import RotatingText from "../../components/rotatingtext/RotatingText";
-import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
+import Button from "../../components/button/Button";
+
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaEnvelope,
+  FaInstagram,
+  FaArrowRight,
+} from "react-icons/fa";
 
 function Home() {
   return (
-    <>
-      <div id="home" className="Container">
-        <img src={heroimg} alt="Hero Image" className="hero-image" />
-        <div className="hero-content">
-          <h5>FRONT END WEB DEVELOPER</h5>
-          <h1 className="hero-title">
-            <RotatingText
-              texts={["Designing", "Developing", "Creating"]}
-              interval={2000}
-            />
-          </h1>
-          <p>
-            I build responsive, modern web applications using React, JavaScript,
-            HTML, CSS and continuously expand my backend skills with Node.js,
-            Express.js and MongoDB.
-            <br></br>
-            Turning your dreams into reality.
-          </p>
-          <ul className="social-links">
-                      <li>
-              <a
-                href="https://github.com/Sawera-kiran"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://linkedin.com/in/sawera-kiran"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/profile.php?id=61552654441923"
-                target="_blank"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:sawerakiran96@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaEnvelope />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/sawera__kiran/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-            </li>
+    <section id="home" className="hero-section">
+      <img src={heroimg} alt="Hero Background" className="hero-image" />
 
-          </ul>
+      <div className="hero-overlay"></div>
+
+      <div className="hero-glow glow-left"></div>
+      <div className="hero-glow glow-right"></div>
+
+      <div className="hero-content">
+        <div className="hero-badge">
+          <span></span>
+          Front-End Web Developer
         </div>
+
+        <h1 className="hero-title">
+          <RotatingText
+            texts={[
+              "Developing Interfaces",
+              "Creating Solutions",
+              "Building Products",
+            ]}
+            interval={2200}
+          />
+        </h1>
+
+        <p className="hero-description">
+          I craft modern, responsive and user-focused web applications using
+          React, JavaScript, HTML and CSS, while continuously expanding my
+          backend expertise with Node.js, Express.js and MongoDB.
+        </p>
+
+        <div className="hero-buttons">
+          <Button text="View Projects" href="#projects" />
+
+          <Button text="Let's Connect" href="#contact" />
+        </div>
+
+        <ul className="social-links">
+          <li>
+            <a
+              href="https://github.com/Sawera-kiran"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://linkedin.com/in/sawera-kiran"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn />
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:sawerakiran96@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email"
+            >
+              <FaEnvelope />
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.instagram.com/sawera__kiran/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
+          </li>
+        </ul>
       </div>
-    </>
+    </section>
   );
 }
 
